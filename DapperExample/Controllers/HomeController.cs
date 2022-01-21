@@ -30,5 +30,11 @@ namespace DapperExample.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+
+        public ActionResult Edit(int? id )
+        {
+            var Emp =db.GetEmployeesById(id);
+            return View(Emp);
+        }
     }
 }

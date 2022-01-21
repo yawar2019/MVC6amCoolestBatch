@@ -27,5 +27,17 @@ namespace DapperExample.Models
 
             return result;
         }
+
+        public EmployeeModel GetEmployeesById(int? id)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@EmpId",id);
+
+            EmployeeModel result = con.QuerySingle<EmployeeModel>("sp_getNeerjaEmployeeDetailsById", param: parameter, commandType: CommandType.StoredProcedure);
+
+            return result;
+
+
+        }
     }
 }
