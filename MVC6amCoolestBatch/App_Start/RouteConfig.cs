@@ -13,10 +13,24 @@ namespace MVC6amCoolestBatch
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+            //Convention based Routing MVC1
+            routes.MapRoute(
+                name: "Test1",
+                url: "pistahouse/burger",
+                defaults: new { controller = "new", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Test2",
+                url: "Playing/cricket",
+                defaults: new { controller = "new", action = "Index", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "new", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
