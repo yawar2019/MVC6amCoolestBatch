@@ -36,8 +36,29 @@ namespace DapperExample.Models
             EmployeeModel result = con.QuerySingle<EmployeeModel>("sp_getNeerjaEmployeeDetailsById", param: parameter, commandType: CommandType.StoredProcedure);
 
             return result;
-
-
         }
+
+        public int UpdateEmployees(EmployeeModel emp)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@EmpId", emp.EmpId);
+            parameter.Add("@EmpName", emp.EmpName);
+            parameter.Add("@EmpSalary", emp.EmpSalary);
+
+            int result = con.Execute("sp_UpdateNeerjaEmployees", param: parameter, commandType: CommandType.StoredProcedure);
+
+            return result;
+        }
+        public int DeleteEmployees(int? id)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@EmpId", id);
+            
+
+            int result = con.Execute("sp_RajaDeleteEmployee", param: parameter, commandType: CommandType.StoredProcedure);
+
+            return result;
+        }
+        
     }
 }
