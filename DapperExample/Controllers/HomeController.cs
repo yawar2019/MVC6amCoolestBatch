@@ -59,5 +59,10 @@ namespace DapperExample.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+
+        public ActionResult HtmlHelperEx()
+        {
+            return View();
+        }
     }
 }

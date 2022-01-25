@@ -1,0 +1,10 @@
+﻿@model DapperExample.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelperEx";
+}
+
+<h2>HtmlHelperEx</h2>
+
+<input type="text" name="name" value="" /><br />
+@Html.TextBox("EmpName")
+@Html.TextBoxFor(model=>model.EmpId)
