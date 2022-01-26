@@ -62,7 +62,9 @@ namespace DapperExample.Controllers
 
         public ActionResult HtmlHelperEx()
         {
-            return View();
+            EmployeeModel emp = new Models.EmployeeModel();
+            emp.EmpName = "Amulya";
+            return View(emp);
         }
     }
 }

@@ -5,6 +5,13 @@
 
 <h2>HtmlHelperEx</h2>
 
-<input type="text" name="name" value="" /><br />
-@Html.TextBox("EmpName")
-@Html.TextBoxFor(model=>model.EmpId)
+<script>
+    function fun() {
+        alert("Hello World");
+    }
+    </script>
+<input type="text" name="name" value="" onclick="fun()" /><br />
+@Html.TextBox("EmpName","Rakshita",new {@class="form-control",@style="color:red", @onclick = "fun()" })
+@Html.TextBoxFor(model=>model.EmpName, new { @class = "form-control", @style = "color:red", @onclick = "fun()" })
+@Html.EditorFor(model => model.EmpId, new { @class = "form-control", @style = "color:red", @onclick = "fun()" })
+@Html.EditorFor(model => model.EmpName, new { htmlAttributes = new { @class = "form-control" } })
