@@ -64,7 +64,17 @@ namespace DapperExample.Controllers
         {
             EmployeeModel emp = new Models.EmployeeModel();
             emp.EmpName = "Amulya";
+
+            ViewBag.Employees = new SelectList(db.GetEmployees(), "EmpId", "EmpName", 59032);
+
             return View(emp);
         }
+
+        [HttpPost]
+        public ActionResult HtmlHelperEx(RegistrationModel reg)
+        {
+            return View();
+        }
+        
     }
 }

@@ -9,9 +9,136 @@
     function fun() {
         alert("Hello World");
     }
-    </script>
+</script>
 <input type="text" name="name" value="" onclick="fun()" /><br />
-@Html.TextBox("EmpName","Rakshita",new {@class="form-control",@style="color:red", @onclick = "fun()" })
-@Html.TextBoxFor(model=>model.EmpName, new { @class = "form-control", @style = "color:red", @onclick = "fun()" })
+@Html.TextBox("EmpName", "Rakshita", new { @class = "form-control", @style = "color:red", @onclick = "fun()" })
+@Html.TextBoxFor(model => model.EmpName, new { @class = "form-control", @style = "color:red", @onclick = "fun()" })
 @Html.EditorFor(model => model.EmpId, new { @class = "form-control", @style = "color:red", @onclick = "fun()" })
-@Html.EditorFor(model => model.EmpName, new { htmlAttributes = new { @class = "form-control" } })
+@Html.EditorFor(model => model.EmpName, new { htmlAttributes = new { @class = "form-control" } })<br />
+
+@Html.LabelFor(model => model.EmpName)
+
+<br /><br />
+
+<form action="" method="post"></form>
+@using (Html.BeginForm())//home/htmlhelperex
+{
+    @Html.RadioButton("Gender", "Male", true)<span>Male</span><br />
+    @Html.RadioButton("Gender", "FeMale")<span>Female</span><br />
+
+    @Html.CheckBox("java", true)<span>Java</span>
+    @Html.CheckBox("Dotnet")<span>Dotnet</span>
+
+    @Html.DropDownList("Country", new List<SelectListItem>(){
+    new SelectListItem {Text="India",Value="1" },
+    new SelectListItem {Text="Japan",Value="2" ,Selected=true},
+    new SelectListItem {Text="China",Value="3" }
+
+    }, "Select Country")
+
+    <br />
+    @Html.DropDownList("Employees")
+    <br />
+    @Html.DropDownList("Empdroplist", (IEnumerable<SelectListItem>)ViewBag.Employees, "Select Employees")
+}
+
+<br />
+
+@Html.TextArea("Address", "Banglore", 10, 5, null)
+
+<br />
+<br />
+<h1>Registration Form is Started from Here</h1>
+
+@using (Html.BeginForm())
+{
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.Label("EmployeeName")
+        </div>
+        <div class="col-md-4">
+            @Html.TextBox("EmployeeName",null, new {@class="form-control"})
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            @Html.Label("Password")
+        </div>
+        <div class="col-md-4">
+            @Html.Password("Pwd", null, new { @class = "form-control" })
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            @Html.Label("Gender")
+        </div>
+        <div class="col-md-4">
+            @Html.RadioButton("EGender", "Male")<span>Male</span>
+            @Html.RadioButton("EGender", "FeMale")<span>Female</span>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            @Html.Label("Country")
+        </div>
+        <div class="col-md-4">
+            @Html.DropDownList("Country", new List<SelectListItem>(){
+    new SelectListItem {Text="India",Value="1" },
+    new SelectListItem {Text="Japan",Value="2" ,Selected=true},
+    new SelectListItem {Text="China",Value="3" }
+
+    }, "Select Country",new {@class="form-control" })
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.Label("Address")
+        </div>
+        <div class="col-md-4">
+            @Html.TextArea("EAddress", "Banglore", 10, 10,new {@class="form-control" })
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+             
+        </div>
+        <div class="col-md-4">
+            @Html.CheckBox("EAcceptterm", true)
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+             
+        </div>
+        <div class="col-md-4">
+            <input type="submit" name="name" value="Save" class="btn btn-success" />
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+
+}

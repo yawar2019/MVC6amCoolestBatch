@@ -144,6 +144,7 @@
     </Compile>
     <Compile Include="Models\EmployeeContext.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
