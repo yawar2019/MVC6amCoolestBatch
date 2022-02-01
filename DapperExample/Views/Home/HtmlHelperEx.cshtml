@@ -1,4 +1,5 @@
-﻿@model DapperExample.Models.EmployeeModel
+﻿@using DapperExample.Models
+@model DapperExample.Models.EmployeeModel
 @{
     ViewBag.Title = "HtmlHelperEx";
 }
@@ -142,3 +143,17 @@
     </div>
 
 }
+
+@myhtmlhelper.MyLabel("EmployeeName")
+@Html.createUrControl("text")
+@Html.createUrControl("file")
+@Html.createUrControl("checkbox")
+
+@helper MyLAbel(string content) { 
+    <label>@content</label>
+    }
+
+@MyLAbel("Agreed to word")
+
+
+
