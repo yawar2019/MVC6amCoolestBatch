@@ -1,4 +1,5 @@
-﻿using MVC6amCoolestBatch.Models;
+﻿using MVC6amCoolestBatch.CustomFilterExample;
+using MVC6amCoolestBatch.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,13 @@ using System.Web.Mvc;
 namespace MVC6amCoolestBatch.Controllers
 {
     //welcome to rakshita
+
+    
+
     public class NewController : Controller
     {
         // GET: New
+        [MyCustomFilter]
         public string Index()//5x5=25 lines
         {
             return "Hello World";
@@ -27,9 +32,9 @@ namespace MVC6amCoolestBatch.Controllers
 
         public ActionResult Index3()//5
         {
+           
             return View("Test");
         }
-
         public ActionResult Index4()
         {
             return View("~/Views/Default/Index.cshtml");
