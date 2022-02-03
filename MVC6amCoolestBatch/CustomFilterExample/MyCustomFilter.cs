@@ -14,7 +14,8 @@ namespace MVC6amCoolestBatch.CustomFilterExample
         }
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
-            base.OnResultExecuting(filterContext);
+            //(filterContext.Result as ViewResult).ViewBag.Player = "Kohli";
+            ((MVC6amCoolestBatch.Models.EmployeeModel)((System.Web.Mvc.ViewResultBase)filterContext.Result).Model).EmpName = "Rakshita";
         }
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {

@@ -168,6 +168,8 @@
     <Content Include="Views\New\Index9.cshtml" />
     <Content Include="Views\New\Index10.cshtml" />
     <Content Include="Views\New\LoadEmployeefromJsonData.cshtml" />
+    <Content Include="Views\New\FilterExample.cshtml" />
+    <Content Include="Views\New\FilterExample2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -270,5 +270,27 @@ namespace MVC6amCoolestBatch.Controllers
         {
             return View();
         }
+        [MyCustomFilter]
+        public ActionResult FilterExample()
+        {
+            ViewBag.Player = "Dhoni";
+            return View();
+        }
+
+        [MyCustomFilter]
+        public ActionResult FilterExample2()
+        {
+             
+
+            
+
+            EmployeeModel emp2 = new EmployeeModel();
+            emp2.EmpId = 3;
+            emp2.EmpName = "Neelima";
+            emp2.EmpSalary = 303933;
+ 
+            
+            return View(emp2);
+        }
     }
 }
